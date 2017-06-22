@@ -1,5 +1,7 @@
 declare namespace Tennis {
 
+    type Hand = "left" | "right";
+
     interface RawPlayer {
         uri: string
         country: string
@@ -7,7 +9,7 @@ declare namespace Tennis {
         height: number
         weight: number
         turnedPro: number
-        hand: "left" | "right"
+        hand: Hand
     }
 
     interface Player extends RawPlayer {
@@ -18,6 +20,8 @@ declare namespace Tennis {
         birthday: string
     }
 
+    type RankingType = "single" | "double";
+
     interface RawRanking {
         playerUri: string
         playerName: string
@@ -25,7 +29,7 @@ declare namespace Tennis {
         points: number
         pointsDropping: number
         tournamentsPlayed: number
-        type: "single" | "double"
+        type: RankingType
     }
 
     interface Ranking extends RawRanking {
