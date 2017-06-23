@@ -1,5 +1,8 @@
 declare namespace Tennis {
 
+    /**
+     * PLAYER
+     */
     type Hand = "left" | "right";
 
     interface RawPlayer {
@@ -20,6 +23,9 @@ declare namespace Tennis {
         birthday: string
     }
 
+    /**
+     * RANKING
+     */
     type RankingType = "single" | "double";
 
     interface RawRanking {
@@ -38,6 +44,58 @@ declare namespace Tennis {
 
     interface NetworkRanking extends RawRanking {
         date: string
+    }
+
+    /**
+     * TOURNAMENT
+     */
+
+    type Surface = 'Hard' | 'Clay' | 'Grass';
+
+    type Situtation = 'Outddor' | 'Indoor';
+
+    interface RawTournament {
+        edition: number
+        name: string
+        country: string
+        uri: string
+        surface: Surface
+        Situtation: Situtation
+        prizeMoney: number
+    }
+
+    interface NetworkTournament extends RawTournament {
+        start: string
+        end: string
+    }
+
+    interface Tournament extends RawTournament {
+        start: Date
+        end: Date
+    }
+
+    /**
+     * MATCH
+     */
+    interface Match {
+        uri: string
+        winnerUri: string
+        loserUri: string
+        tournamentUri: string
+        score: Array<Array<number>>
+        time: number
+        round: string
+        retired: boolean
+    }
+
+    /**
+     * STATS
+     */
+    interface Stat {
+        uriMatch: string
+        uriPlayer: string
+        label: string
+        value: string
     }
 }
 
