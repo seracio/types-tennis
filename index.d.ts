@@ -62,6 +62,7 @@ declare namespace Tennis {
         surface: Surface
         Situtation: Situtation
         prizeMoney: number
+        category: string
     }
 
     interface NetworkTournament extends RawTournament {
