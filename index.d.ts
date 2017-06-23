@@ -60,7 +60,7 @@ declare namespace Tennis {
         country: string
         uri: string
         surface: Surface
-        Situtation: Situtation
+        situtation: Situtation
         prizeMoney: number
         category: string
     }
