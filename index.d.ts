@@ -6,7 +6,7 @@ declare namespace Tennis {
     type Hand = "left" | "right";
 
     interface RawPlayer {
-        uri: string
+        id: string
         country: string
         name: string
         height: number
@@ -29,7 +29,7 @@ declare namespace Tennis {
     type RankingType = "single" | "double";
 
     interface RawRanking {
-        playerUri: string
+        playerId: string
         playerName: string
         rank: number
         points: number
@@ -58,7 +58,7 @@ declare namespace Tennis {
         edition: number
         name: string
         country: string
-        uri: string
+        id: string
         surface: Surface
         situtation: Situtation
         prizeMoney: string
@@ -76,28 +76,29 @@ declare namespace Tennis {
     }
 
     /**
-     * MATCH
-     */
-    interface Match {
-        uri: string
-        winnerUri: string
-        loserUri: string
-        tournamentUri: string
-        score: Array<Array<number>>
-        time: number
-        round: string
-        retired: boolean
-    }
-
-    /**
      * STATS
      */
     interface Stat {
-        uriMatch: string
-        uriPlayer: string
+        playerId: string
         label: string
         value: string
     }
+
+    /**
+     * MATCH
+     */
+    interface Match {
+        id: string
+        winnerId: string
+        loserId: string
+        tournamentId: string
+        score: Array<Array<number>>
+        time: number
+        round: string
+        retired: boolean,
+        stats: Array<Stat>
+    }
+
 }
 
 export = Tennis
