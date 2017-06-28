@@ -1,6 +1,6 @@
 {
   "name": "@seracio/types-tennis",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": "https://github.com/seracio/types-tennis.git",
   "author": "nmondon <nicolasmondon@gmail.com>",
