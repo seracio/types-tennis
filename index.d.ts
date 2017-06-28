@@ -76,6 +76,15 @@ declare namespace Tennis {
     }
 
     /**
+     * STATS
+     */
+    interface Stat {
+        uriPlayer: string
+        label: string
+        value: string
+    }
+
+    /**
      * MATCH
      */
     interface Match {
@@ -86,18 +95,10 @@ declare namespace Tennis {
         score: Array<Array<number>>
         time: number
         round: string
-        retired: boolean
+        retired: boolean,
+        stats: Array<Stat>
     }
 
-    /**
-     * STATS
-     */
-    interface Stat {
-        uriMatch: string
-        uriPlayer: string
-        label: string
-        value: string
-    }
 }
 
 export = Tennis
